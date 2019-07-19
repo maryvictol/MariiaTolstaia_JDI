@@ -11,6 +11,7 @@ import com.epam.jdi.light.ui.html.complex.RadioButtons;
 import entities.MetalsAndColors;
 import lombok.Getter;
 
+// TODO Pay attention of code formatting !
 @Getter
 public class MetalsAndColorsForm extends Form<MetalsAndColors> {
 
@@ -52,7 +53,4 @@ public class MetalsAndColorsForm extends Form<MetalsAndColors> {
             submit.click();
 
         }
-
-
-
 }

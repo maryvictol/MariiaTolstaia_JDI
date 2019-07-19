@@ -26,6 +26,4 @@ public class MetalsAndColorsPage extends WebPage {
                 .collect(Collectors.toList());
         return allResults;
     }
-
-
 }
