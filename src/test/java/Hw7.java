@@ -24,19 +24,19 @@ public class Hw7 {
 
     @Test
     public void hw7() {
-
-    //1.Login on JDI site as User
+        //1.Login on JDI site as User
         JdiSite.open();
         JdiSite.homePage.login(User.PITER_CHAILOVSKII);
         JdiSite.homePage.checkLoggedin(User.PITER_CHAILOVSKII);
 
-    //2. Open Metals & Colors page by Header menu
+        //2. Open Metals & Colors page by Header menu
+        // TODO It will be better with ENUM, cause it helps us to avoid misspelling and so on.
         JdiSite.homePage.clickHeaderMenuOption("METALS & COLORS");
 
-    //3. Fill form Metals & Colors by data below
+        //3. Fill form Metals & Colors by data below
         JdiSite.metalsAndColorsPage.submitMetalsAndColorsForm(TEST_METALS_AND_COLORS);
 
-    //4. Result sections should contains data  below
+        //4. Result sections should contains data  below
         assertEquals(JdiSite.metalsAndColorsPage.getResults(),
                 TEST_METALS_AND_COLORS.expectFormLog());
     }

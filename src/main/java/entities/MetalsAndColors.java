@@ -17,14 +17,10 @@ public class MetalsAndColors extends DataClass<MetalsAndColors> {
 
     public List<String> expectFormLog(){
         List<String> expectLog = new ArrayList<>();
-        int temp = 0;
+        int temp = METAL_AND_COLORS_SUMMARY_DEFAULT;
 
         if(getSummary() != null && !getSummary().isEmpty()) {
-            for (String element : getSummary()) {
-                temp += Integer.parseInt(element);
-            }
-        } else {
-            temp = METAL_AND_COLORS_SUMMARY_DEFAULT;
+            temp = getSummary().stream().mapToInt(Integer::new).sum();
         }
         expectLog.add("Summary: " + temp);
 
