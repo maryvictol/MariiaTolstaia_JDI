@@ -6,7 +6,6 @@ import pages.MetalsAndColorsPage;
 
 @JSite("https://epam.github.io/JDI/")
 public class JdiSite {
-
     @Url("index.html")
     @Title("Home Page")
     public static HomePage homePage;
@@ -18,6 +17,4 @@ public class JdiSite {
     public static void open() {
         homePage.open();
     }
-
-
 }

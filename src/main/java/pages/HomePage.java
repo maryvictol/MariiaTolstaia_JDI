@@ -11,7 +11,6 @@ import form.LoginForm;
 import org.hamcrest.Matchers;
 
 public class HomePage extends WebPage {
-
     private LoginForm loginForm;
 
     @Css("#user-name")
@@ -33,7 +32,7 @@ public class HomePage extends WebPage {
                 .text(Matchers.equalTo(user.getFullUserName()));
     }
 
-    public void clickHeaderMenuOption(String option){
+    public void clickHeaderMenuOption(String option) {
         headerMenu.select(option);
     }
 }

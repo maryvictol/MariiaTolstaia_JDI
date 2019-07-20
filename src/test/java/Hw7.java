@@ -8,10 +8,10 @@ import org.testng.annotations.Test;
 import static com.epam.jdi.light.driver.WebDriverUtils.killAllSeleniumDrivers;
 import static com.epam.jdi.light.ui.html.PageFactory.initElements;
 import static entities.Defaults.TEST_METALS_AND_COLORS;
+import static enums.HeaderMenuItems.METALS_AND_COLORS;
 import static org.testng.Assert.assertEquals;
 
 public class Hw7 {
-
     @BeforeClass
     public void beforeClass() {
         DriverData.CHROME_OPTIONS = () -> {
@@ -31,7 +31,7 @@ public class Hw7 {
 
         //2. Open Metals & Colors page by Header menu
         // TODO It will be better with ENUM, cause it helps us to avoid misspelling and so on.
-        JdiSite.homePage.clickHeaderMenuOption("METALS & COLORS");
+        JdiSite.homePage.clickHeaderMenuOption(METALS_AND_COLORS.getItem());
 
         //3. Fill form Metals & Colors by data below
         JdiSite.metalsAndColorsPage.submitMetalsAndColorsForm(TEST_METALS_AND_COLORS);
@@ -45,6 +45,4 @@ public class Hw7 {
     public void afterClass() {
         killAllSeleniumDrivers();
     }
-
-
 }

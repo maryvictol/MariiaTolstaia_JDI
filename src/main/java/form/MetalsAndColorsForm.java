@@ -14,7 +14,6 @@ import lombok.Getter;
 // TODO Pay attention of code formatting !
 @Getter
 public class MetalsAndColorsForm extends Form<MetalsAndColors> {
-
     @Css("#radio")
     private RadioButtons summary;
 
@@ -22,9 +21,9 @@ public class MetalsAndColorsForm extends Form<MetalsAndColors> {
     private HtmlRadioGroup elements;
 
     @JDropdown(root = "div[id=colors]",
-                value = ".filter-option",
-                list = "li",
-                expand = ".caret")
+            value = ".filter-option",
+            list = "li",
+            expand = ".caret")
     private Droplist colors;
 
     @JDropdown(root = "div[id=metals]",
@@ -34,23 +33,22 @@ public class MetalsAndColorsForm extends Form<MetalsAndColors> {
     private Droplist metals;
 
     @JDropdown(root = "div[id=salad-dropdown",
-                value = ".filter-option",
-                list = "li",
-                expand = ".caret")
+            value = ".filter-option",
+            list = "li",
+            expand = ".caret")
     private Droplist vegetables;
 
     @Css("#submit-button")
     private Button submit;
 
-    public void submitMetalsAndColorsForm(MetalsAndColors metalsAndColors){
-            metalsAndColors.getSummary().forEach(element -> summary.select(element));
-            metalsAndColors.getElements().forEach(element -> elements.select(element));
-            colors.select(metalsAndColors.getColors());
-            metals.select(metalsAndColors.getMetals());
-            vegetables.select("Vegetables");
-            metalsAndColors.getVegetables().forEach(element -> vegetables.select(element));
+    public void submitMetalsAndColorsForm(MetalsAndColors metalsAndColors) {
+        metalsAndColors.getSummary().forEach(element -> summary.select(element));
+        metalsAndColors.getElements().forEach(element -> elements.select(element));
+        colors.select(metalsAndColors.getColors());
+        metals.select(metalsAndColors.getMetals());
+        vegetables.select("Vegetables");
+        metalsAndColors.getVegetables().forEach(element -> vegetables.select(element));
 
-            submit.click();
-
-        }
+        submit.click();
+    }
 }

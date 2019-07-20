@@ -8,7 +8,6 @@ import com.epam.jdi.light.ui.html.common.TextField;
 import entities.User;
 
 public class LoginForm extends Form<User> {
-
     @Css("#name")
     private TextField login;
 
@@ -22,10 +21,9 @@ public class LoginForm extends Form<User> {
     private Text fullUserName;
 
     @Override
-    public void login(User user){
+    public void login(User user) {
         login.input(user.getLogin());
         password.input(user.getPassword());
         submit.click();
     }
-
 }
