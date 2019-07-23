@@ -31,6 +31,8 @@ public class Hw7 {
 
         //2. Open Metals & Colors page by Header menu
         // TODO It will be better with ENUM, cause it helps us to avoid misspelling and so on.
+        // TODO In this case, you should not pass the string to the method, pass enum itself !
+        // The similar like JdiSite.homePage::login
         JdiSite.homePage.clickHeaderMenuOption(METALS_AND_COLORS.getItem());
 
         //3. Fill form Metals & Colors by data below
