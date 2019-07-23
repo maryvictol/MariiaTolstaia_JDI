@@ -20,10 +20,19 @@
         <profile>
             <id>hw7</id>
             <activation>
-                <activeByDefault>true</activeByDefault>
+                <activeByDefault>false</activeByDefault>
             </activation>
             <properties>
                 <suite.xml>src/test/resources/hw7.xml</suite.xml>
+            </properties>
+        </profile>
+        <profile>
+            <id>hw8</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <suite.xml>src/test/resources/hw8.xml</suite.xml>
             </properties>
         </profile>
     </profiles>

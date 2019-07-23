@@ -24,7 +24,7 @@ public class MetalsAndColorsForm extends Form<MetalsAndColors> {
             value = ".filter-option",
             list = "li",
             expand = ".caret")
-    private Droplist colors;
+    private Droplist color;
 
     @JDropdown(root = "div[id=metals]",
             value = ".filter-option",
@@ -44,7 +44,7 @@ public class MetalsAndColorsForm extends Form<MetalsAndColors> {
     public void submitMetalsAndColorsForm(MetalsAndColors metalsAndColors) {
         metalsAndColors.getSummary().forEach(element -> summary.select(element));
         metalsAndColors.getElements().forEach(element -> elements.select(element));
-        colors.select(metalsAndColors.getColors());
+        color.select(metalsAndColors.getColor());
         metals.select(metalsAndColors.getMetals());
         vegetables.select("Vegetables");
         metalsAndColors.getVegetables().forEach(element -> vegetables.select(element));

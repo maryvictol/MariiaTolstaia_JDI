@@ -8,8 +8,10 @@ import com.epam.jdi.light.ui.html.common.Label;
 import com.epam.jdi.light.elements.complex.JList;
 import entities.User;
 import form.LoginForm;
+import lombok.Getter;
 import org.hamcrest.Matchers;
 
+@Getter
 public class HomePage extends WebPage {
     private LoginForm loginForm;
 
@@ -18,6 +20,9 @@ public class HomePage extends WebPage {
 
     @Css(".profile-photo")
     private Button profilePhoto;
+
+    @Css("div[class=logout]")
+    private Button logout;
 
     @Css("ul.m-l8 > li")
     private JList<HtmlElement> headerMenu;

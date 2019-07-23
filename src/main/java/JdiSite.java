@@ -10,7 +10,7 @@ public class JdiSite {
     @Title("Home Page")
     public static HomePage homePage;
 
-    @Url("metals-colors.html")
+    @Url("metals-color.html")
     @Title("Metal and Colors")
     public static MetalsAndColorsPage metalsAndColorsPage;
 

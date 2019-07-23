@@ -13,7 +13,7 @@ import static entities.Defaults.METAL_AND_COLORS_SUMMARY_DEFAULT;
 public class MetalsAndColors extends DataClass<MetalsAndColors> {
     private List<String> summary;
     private List<String> elements;
-    private String colors;
+    private String color;
     private String metals;
     private List<String> vegetables;
 
@@ -30,8 +30,8 @@ public class MetalsAndColors extends DataClass<MetalsAndColors> {
             expectLog.add("Elements: " + String.join(", ", getElements()));
         }
 
-        if (getColors() != null && !getColors().isEmpty()) {
-            expectLog.add("Color: " + getColors());
+        if (getColor() != null && !getColor().isEmpty()) {
+            expectLog.add("Color: " + getColor());
         } else {
             expectLog.add("Color: Colors");
         }
