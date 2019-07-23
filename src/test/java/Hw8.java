@@ -23,7 +23,7 @@ public class Hw8 {
     }
 
     @Test(dataProvider = "dataProvider", dataProviderClass = ChoiceDataProvider.class)
-    public void hw8(MetalsAndColors metalsAndColors) throws IOException {
+    public void hw8(MetalsAndColors metalsAndColors) throws IOException { // TODO What is the reason of throws here ?
         //1.Login on JDI site as User
         JdiSite.open();
         JdiSite.homePage.login(User.PITER_CHAILOVSKII);
@@ -39,6 +39,7 @@ public class Hw8 {
         assertEquals(JdiSite.metalsAndColorsPage.getResults(),
                 metalsAndColors.expectFormLog());
 
+        // TODO It will be better to create specific method for 'log out'.
         JdiSite.homePage.getProfilePhoto().click();
         JdiSite.homePage.getLogout().click();
     }

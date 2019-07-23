@@ -16,16 +16,17 @@ import static entities.Defaults.JSON_DATA_FILE;
 
 public class ChoiceDataProvider {
     @DataProvider(name = "dataProvider")
-    public static Object[][] dataProvider() throws IOException {
-        Map<String, MetalsAndColors> mapFromJson = testDateFromJson(JSON_DATA_FILE);
-        Object[][] object = new Object[mapFromJson.size()][1];
-        Iterator iterator = mapFromJson.keySet().iterator();
-        int i = 0;
-        while (iterator.hasNext()) {
-            object[i][0] = mapFromJson.get(iterator.next());
-            i++;
-        }
-        return object;
+    public static Object[] dataProvider() throws IOException {
+//        Map<String, MetalsAndColors> mapFromJson = testDateFromJson(JSON_DATA_FILE);
+//        Object[][] object = new Object[mapFromJson.size()][1];
+//        Iterator iterator = mapFromJson.keySet().iterator();
+//        int i = 0;
+//        while (iterator.hasNext()) {
+//            object[i][0] = mapFromJson.get(iterator.next());
+//            i++;
+//        }
+//        return object;
+        return testDateFromJson(JSON_DATA_FILE).values().toArray();
     }
 
     private static Map<String, MetalsAndColors> testDateFromJson(String fileName) throws IOException {
