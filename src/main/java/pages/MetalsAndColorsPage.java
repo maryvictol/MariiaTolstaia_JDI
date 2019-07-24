@@ -22,9 +22,8 @@ public class MetalsAndColorsPage extends WebPage {
 
     public List<String> getResults() {
         // TODO Take a look on IDEA warning
-        List<String> allResults = results.stream()
+        return results.stream()
                 .map(UIElement::getText)
                 .collect(Collectors.toList());
-        return allResults;
     }
 }

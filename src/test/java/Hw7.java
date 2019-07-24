@@ -1,5 +1,6 @@
 import com.epam.jdi.light.driver.get.DriverData;
 import entities.User;
+import enums.HeaderMenuItems;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -27,13 +28,13 @@ public class Hw7 {
         //1.Login on JDI site as User
         JdiSite.open();
         JdiSite.homePage.login(User.PITER_CHAILOVSKII);
-        JdiSite.homePage.checkLoggedin(User.PITER_CHAILOVSKII);
+        JdiSite.homePage.checkLoggedIn(User.PITER_CHAILOVSKII);
 
         //2. Open Metals & Colors page by Header menu
         // TODO It will be better with ENUM, cause it helps us to avoid misspelling and so on.
         // TODO In this case, you should not pass the string to the method, pass enum itself !
         // The similar like JdiSite.homePage::login
-        JdiSite.homePage.clickHeaderMenuOption(METALS_AND_COLORS.getItem());
+        JdiSite.homePage.clickHeaderMenuOption(METALS_AND_COLORS);
 
         //3. Fill form Metals & Colors by data below
         JdiSite.metalsAndColorsPage.submitMetalsAndColorsForm(TEST_METALS_AND_COLORS);

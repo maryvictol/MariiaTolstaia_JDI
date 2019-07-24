@@ -7,6 +7,7 @@ import com.epam.jdi.light.ui.html.common.Button;
 import com.epam.jdi.light.ui.html.common.Label;
 import com.epam.jdi.light.elements.complex.JList;
 import entities.User;
+import enums.HeaderMenuItems;
 import form.LoginForm;
 import lombok.Getter;
 import org.hamcrest.Matchers;
@@ -32,12 +33,17 @@ public class HomePage extends WebPage {
         loginForm.login(user);
     }
 
-    public void checkLoggedin(User user) {
+    public void logout() {
+        getProfilePhoto().click();
+        getLogout().click();
+    }
+
+    public void checkLoggedIn(User user) {
         userName.shouldBe()
                 .text(Matchers.equalTo(user.getFullUserName()));
     }
 
-    public void clickHeaderMenuOption(String option) {
-        headerMenu.select(option);
+    public void clickHeaderMenuOption(HeaderMenuItems option) {
+        headerMenu.select(option.getItem());
     }
 }
