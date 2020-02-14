@@ -1,4 +1,5 @@
 import com.epam.jdi.light.driver.get.DriverData;
+import com.epam.jdi.tools.func.JAction1;
 import entities.User;
 import enums.HeaderMenuItems;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -7,7 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import static com.epam.jdi.light.driver.WebDriverUtils.killAllSeleniumDrivers;
-import static com.epam.jdi.light.ui.html.PageFactory.initElements;
+import static com.epam.jdi.light.elements.init.PageFactory.initElements;
 import static entities.Defaults.TEST_METALS_AND_COLORS;
 import static enums.HeaderMenuItems.METALS_AND_COLORS;
 import static org.testng.Assert.assertEquals;
@@ -15,11 +16,8 @@ import static org.testng.Assert.assertEquals;
 public class Hw7 {
     @BeforeClass
     public void beforeClass() {
-        DriverData.CHROME_OPTIONS = () -> {
-            ChromeOptions cap = new ChromeOptions();
-            cap.addArguments("--start-maximized");
-            return cap;
-        };
+        DriverData.CHROME_OPTIONS = (cap ->
+                cap.addArguments("--start-maximized"));
         initElements(JdiSite.class);
     }
 

@@ -1,22 +1,25 @@
 import com.epam.jdi.light.driver.get.DriverData;
+import com.epam.jdi.tools.func.JAction1;
 import entities.MetalsAndColors;
 import entities.User;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.*;
 
 import static com.epam.jdi.light.driver.WebDriverUtils.killAllSeleniumDrivers;
-import static com.epam.jdi.light.ui.html.PageFactory.initElements;
+import static com.epam.jdi.light.elements.init.PageFactory.initElements;
 import static enums.HeaderMenuItems.METALS_AND_COLORS;
 import static org.testng.Assert.assertEquals;
 
 public class Hw8 {
     @BeforeClass
     public void beforeClass() {
-        DriverData.CHROME_OPTIONS = () -> {
-            ChromeOptions cap = new ChromeOptions();
-            cap.addArguments("--start-maximized");
-            return cap;
-        };
+//        DriverData.CHROME_OPTIONS = () -> {
+//            ChromeOptions cap = new ChromeOptions();
+//            cap.addArguments("--start-maximized");
+//           return cap;
+//        };
+        DriverData.CHROME_OPTIONS = (cap ->
+            cap.addArguments("--start-maximized"));
         initElements(JdiSite.class);
     }
 

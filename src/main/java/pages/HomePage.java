@@ -1,11 +1,12 @@
 package pages;
 
-import com.epam.jdi.light.elements.composite.WebPage;
-import com.epam.jdi.light.elements.pageobjects.annotations.simple.Css;
-import com.epam.jdi.light.ui.html.base.HtmlElement;
-import com.epam.jdi.light.ui.html.common.Button;
-import com.epam.jdi.light.ui.html.common.Label;
+import com.epam.jdi.light.elements.common.Label;
+import com.epam.jdi.light.elements.common.UIElement;
 import com.epam.jdi.light.elements.complex.JList;
+import com.epam.jdi.light.elements.composite.WebPage;
+import com.epam.jdi.light.elements.pageobjects.annotations.locators.Css;
+
+import com.epam.jdi.light.ui.html.elements.common.Button;
 import entities.User;
 import enums.HeaderMenuItems;
 import form.LoginForm;
@@ -26,7 +27,7 @@ public class HomePage extends WebPage {
     private Button logout;
 
     @Css("ul.m-l8 > li")
-    private JList<HtmlElement> headerMenu;
+    private JList<UIElement> headerMenu;
 
     public void login(User user) {
         profilePhoto.click();
